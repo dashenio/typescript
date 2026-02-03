@@ -1,5 +1,5 @@
-import leia = require('readline-sync');
-import Stack = require('../Stack');
+import leia from 'readline-sync';
+import Stack from '../Stack';
 
 const pilha = new Stack<string>();
 let continuar: boolean = true;
@@ -14,7 +14,7 @@ while(continuar){
     let opcao = leia.questionInt('\nEscolha uma opcao: ')
     switch(opcao){
         case 1:
-            pilha.push(leia.question('Pilha: '));
+            pilha.push(leia.question('Livro: '));
             console.log('\nPilha:\n');
             pilha.printStack();
             console.log('\nLivro adicionado!\n')

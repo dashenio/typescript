@@ -9,7 +9,7 @@ interface stackInterface<Type> {
     clear(): void;
  }
  
-class Stack<Type> implements stackInterface<Type> {
+ export default class Stack<Type> implements stackInterface<Type> {
  
     private StackData: Array<Type> = [];
  
@@ -68,4 +68,3 @@ class Stack<Type> implements stackInterface<Type> {
     }
  
  }
-  export = Stack;

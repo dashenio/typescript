@@ -9,7 +9,7 @@ interface queueInterface<Type> {
    clear(): void;
 }
 
-class Queue<Type> implements queueInterface<Type> {
+export default class Queue<Type> implements queueInterface<Type> {
 
    private QueueData: Array<Type> = [];
 
@@ -19,17 +19,17 @@ class Queue<Type> implements queueInterface<Type> {
       let result = this.QueueData.length <= 0;
       return result;
    }
-   // colocar na fila
+
    enqueue(dataItem: Type): void {
       this.QueueData.push(dataItem);
    }
-   // tirar da fila
+
    dequeue(): Type | undefined {
       if (this.isEmpty()) {
          console.log("A fila está vazia");
          return;
       } else {
-         var element = this.QueueData.shift(); // tira o primeiro da fila
+         var element = this.QueueData.shift();
          return element;
       }
    }
@@ -44,7 +44,7 @@ class Queue<Type> implements queueInterface<Type> {
          console.log(this.QueueData[i]);
       }
    }
-   // exibe, mas não remove
+
    peek(): Type | undefined {
       if (this.isEmpty()) {
          console.log("A fila está vazia");
@@ -62,10 +62,9 @@ class Queue<Type> implements queueInterface<Type> {
          return false;
       }
    }
-   // limpa fila
+
    clear(): void {
       this.QueueData.length = 0;
    }
 
 }
-export = Queue;
